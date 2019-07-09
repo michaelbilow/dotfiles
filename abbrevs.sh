@@ -27,3 +27,8 @@ alias clear_all_docker='docker rm $(docker ps -a -q)'
 psgrepkill() {
   ps auxw | grep $1 | xargs -i kill -9 {}
 }
+
+if [ -x "$(xclip)" ] 
+  alias pbcopy='xsel --clipboard --input'
+  alias pbpaste='xsel --clipboard --output'
+fi

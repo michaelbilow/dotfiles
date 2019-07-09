@@ -23,30 +23,38 @@ linuxOnly=<<EOF
     apt-transport-https \
     software-properties-common \
     openjdk-8-jdk \
-    swig
+    swig \
+    xclip \
+    xsel
+EOF
+
+macOnly=<<EOF
 EOF
 
 
 
-# Install XCode Developer Tools if on Mac
+# Install XCode Developer Tools and other mac dependencies
 if [[ "$machine" = "MacOSX" ]]
 then
   xcode-select -p 1> /dev/null
+  
   if [[ $? -ne 0 ]]
   then
     xcode-select --install
   fi
+  
   /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-  brew install $linuxAndMac
+  
+  brew install $linuxAndMac \
+    $macOnly
 fi
 
-# Install gcc if Linux
+# Install Linux dependencies
 if [[ "$machine" = "Linux" ]] 
 then
   sudo apt-get update -y
   sudo apt-get install -y \
-  $linuxAndMac \
-  $linuxOnly
-
+    $linuxAndMac \
+    $linuxOnly
 fi
 
