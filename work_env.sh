@@ -1,31 +1,5 @@
 #!/bin/bash
 
-# Determine machine type
-
-unameOut="$(uname -s)"
-case "${unameOut}" in
-    Linux*)     machine=Linux;;
-    Darwin*)    machine=MacOSX;;
-    *)          machine="UNKNOWN:${unameOut}"
-esac
-
-# Install XCode Developer Tools if on Mac
-if [[ "$machine" = "MacOSX" ]]
-then
-  xcode-select -p 1> /dev/null
-  if [[ $? -ne 0 ]]
-  then
-    xcode-select --install
-  fi
-fi
-
-# Install gcc if Linux
-if [[ "$machine" = "Linux" ]] 
-then
-  sudo apt-get update
-  sudo apt-get install gcc
-fi
-
 # Install conda and anaconda python
 if [[ -z $(which conda) ]]
 then 
