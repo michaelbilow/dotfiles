@@ -7,6 +7,27 @@ case "${unameOut}" in
     *)          machine="UNKNOWN:${unameOut}"
 esac
 
+linuxAndMac=<<EOF
+    gcc \
+    vim \
+    curl \
+    git
+EOF
+
+linuxOnly=<<EOF
+    dkms \
+    build-essential \
+    linux-headers-generic \
+    ca-certificates \
+    gnupg-agent \
+    apt-transport-https \
+    software-properties-common \
+    openjdk-8-jdk \
+    swig
+EOF
+
+
+
 # Install XCode Developer Tools if on Mac
 if [[ "$machine" = "MacOSX" ]]
 then
@@ -15,24 +36,17 @@ then
   then
     xcode-select --install
   fi
+  /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+  brew install $linuxAndMac
 fi
 
 # Install gcc if Linux
 if [[ "$machine" = "Linux" ]] 
 then
   sudo apt-get update -y
-  sudo apt-get install -y gcc \
-    vim \
-    dkms \
-    build-essential \
-    linux-headers-generic \
-    ca-certificates \
-    gnupg-agent \
-    curl \
-    apt-transport-https \
-    software-properties-common \
-    openjdk-8-jdk \
-    git \
-    swig
+  sudo apt-get install -y \
+  $linuxAndMac \
+  $linuxOnly
+
 fi
 
