@@ -1,0 +1,10 @@
+gcc
+vim
+dkms
+build-essential
+linux-headers-generic
+ca-certificates
+gnupg-agent
+curl
+apt-transport-https
+software-properties-common
