@@ -34,12 +34,24 @@ conda install -n work -y \
 
 conda install -n work -c conda-forge -y \
   jupyter_console \
-  chartify ipywidgets \
-  ipywebrtc pythreejs ipyleaflet \
-  bqplot qgrid fire \
-  voila cookiecutter geopandas \
-  fiona shapely jaydebeapi altair \
-  vega_datasets nodejs pyarrow
+  chartify \
+  ipywidgets \
+  ipywebrtc \
+  pythreejs \
+  ipyleaflet \
+  bqplot \
+  qgrid \
+  fire \
+  voila \
+  cookiecutter \
+  geopandas \
+  fiona \
+  shapely \
+  jaydebeapi \
+  altair \
+  vega_datasets \
+  nodejs \
+  pyarrow
   
 $conda_dir/envs/work/bin/pip install -U cookiecutter
 
