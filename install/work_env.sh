@@ -12,23 +12,27 @@ else
     conda_dir=$(dirname $(dirname $(which conda)))
 fi
 
-source $conda_dir/etc/profile.d/conda.sh
-
 conda update -n base -y -c defaults conda
 
 # Install work python
 PYTHON_VERSION=3.6
 rm -rf $conda_dir/envs/work
 conda create -n work -y python=$PYTHON_VERSION
-conda activate work
 
-conda install -y \
-  numpy pandas scipy scikit-learn \
-  openpyxl xlrd jupyter \
-  plotly matplotlib \
-  beautifulsoup4 h5py 
+conda install -n work -y \
+  numpy \
+  pandas \
+  scipy \
+  scikit-learn \
+  openpyxl \
+  xlrd \
+  jupyter \
+  plotly \
+  matplotlib \
+  beautifulsoup4 \
+  h5py 
 
-conda install -c conda-forge -y \
+conda install -n work -c conda-forge -y \
   jupyter_console \
   chartify ipywidgets \
   ipywebrtc pythreejs ipyleaflet \
@@ -37,23 +41,22 @@ conda install -c conda-forge -y \
   fiona shapely jaydebeapi altair \
   vega_datasets nodejs pyarrow
   
-pip install -U cookiecutter
+$conda_dir/envs/work/bin/pip install -U cookiecutter
 
-pip install -U --pre jupyterlab # need jupyterlab >=1.0.0
+$conda_dir/envs/work/bin/pip install -U --pre jupyterlab # need jupyterlab >=1.0.0
 
-
-jupyter labextension install \
-     @jupyter-widgets/jupyterlab-manager \
-     @jupyter-widgets/jupyterlab-sidecar \
-     @jupyterlab/geojson-extension \
-     @jupyterlab/latex \
-     @jupyterlab/plotly-extension \
-     @jupyterlab/toc \
-     @jupyterlab/vega2-extension \
-     @jupyterlab/vega3-extension \
-     jupyterlab_bokeh \
-     jupyter-leaflet \
-     qgrid
+$conda_dir/envs/work/bin/jupyter labextension install \
+  @jupyter-widgets/jupyterlab-manager \
+  @jupyter-widgets/jupyterlab-sidecar \
+  @jupyterlab/geojson-extension \
+  @jupyterlab/latex \
+  @jupyterlab/plotly-extension \
+  @jupyterlab/toc \
+  @jupyterlab/vega2-extension \
+  @jupyterlab/vega3-extension \
+  jupyterlab_bokeh \
+  jupyter-leaflet \
+  qgrid
 
 conda deactivate
 
