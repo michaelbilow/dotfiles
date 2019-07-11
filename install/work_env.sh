@@ -1,19 +1,5 @@
 #!/bin/bash
 
-# Install conda and anaconda python
-if [[ -z $(which conda) ]]
-then 
-    conda_dir=$HOME/miniconda
-    curl https://repo.continuum.io/miniconda/Miniconda3-latest-$machine-x86_64.sh > miniconda.sh
-    bash miniconda.sh -b -p $conda_dir
-    rm miniconda.sh
-    $conda_dir/bin/conda init
-else 
-    conda_dir=$(dirname $(dirname $(which conda)))
-fi
-
-conda update -n base -y -c defaults conda
-
 # Install work python
 PYTHON_VERSION=3.6
 rm -rf $conda_dir/envs/work
