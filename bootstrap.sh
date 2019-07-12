@@ -11,6 +11,13 @@ esac
 
 export $machine
 
+if [[ $machine="MacOSX" ]]
+    /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+    brew install curl
+else 
+    apt-get update && apt-get install sudo curl
+fi
+
 bilowGithub="https://raw.githubusercontent.com/michaelbilow/dotfiles/master/install"
 
 getBilow() {
