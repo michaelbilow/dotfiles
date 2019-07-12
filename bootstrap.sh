@@ -1,5 +1,5 @@
 #!/bin/bash
-set -v
+set -ve
 
 # Determine machine type
 
@@ -21,7 +21,9 @@ else
 fi
 
 export bilowGithub="https://raw.githubusercontent.com/michaelbilow/dotfiles/master/install"
-curl -fsSL "https://raw.githubusercontent.com/michaelbilow/dotfiles/master/install/bootstrap/functions.sh" -o /tmp/functions.sh
-source /tmp/functions.sh
+functionsPath=/tmp/functions.sh
+curl -fsSL "${bilowGithub}/bootstrap/functions.sh" -o $functionsPath
+source $functionsPath
 
 installBilow startup
+rm $functionsPath

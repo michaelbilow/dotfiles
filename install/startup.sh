@@ -1,6 +1,4 @@
 #!/bin/bash
-echo "foo"
-echo $(declare -F)
 
 sourceBilow tools
 
