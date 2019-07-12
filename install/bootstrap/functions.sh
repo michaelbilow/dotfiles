@@ -8,6 +8,8 @@ case "${unameOut}" in
 esac
 
 export machine=$machine
+export conda_dir=$HOME/miniconda
+
 
 getBilow() {
     filename="$1.sh"

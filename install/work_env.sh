@@ -1,11 +1,9 @@
-#!/bin/bash
-
 # Install work python
 PYTHON_VERSION=3.6
 rm -rf $conda_dir/envs/work
-conda create -n work -y python=$PYTHON_VERSION
+$conda_dir/bin/conda create -n work -y python=$PYTHON_VERSION
 
-conda install -n work -y \
+$conda_dir/bin/conda install -n work -y \
   numpy \
   pandas \
   scipy \
@@ -18,7 +16,7 @@ conda install -n work -y \
   beautifulsoup4 \
   h5py 
 
-conda install -n work -c conda-forge -y \
+$conda_dir/bin/conda install -n work -c conda-forge -y \
   jupyter_console \
   chartify \
   ipywidgets \
@@ -41,7 +39,8 @@ conda install -n work -c conda-forge -y \
   
 $conda_dir/envs/work/bin/pip install -U cookiecutter
 
-$conda_dir/envs/work/bin/pip install -U --pre jupyterlab # need jupyterlab >=1.0.0
+# need jupyterlab >=1.0.0
+$conda_dir/envs/work/bin/pip install -U --pre jupyterlab 
 
 $conda_dir/envs/work/bin/jupyter labextension install \
   @jupyter-widgets/jupyterlab-manager \
@@ -55,6 +54,4 @@ $conda_dir/envs/work/bin/jupyter labextension install \
   jupyterlab_bokeh \
   jupyter-leaflet \
   qgrid
-
-conda deactivate
 

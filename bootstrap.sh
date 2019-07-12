@@ -10,7 +10,7 @@ case "${unameOut}" in
     *)          machine="UNKNOWN:${unameOut}"
 esac
 
-if [[ $machine == "MacOSX" ]]
+if [[ $machine = "MacOSX" ]]
 then
     if [[ ! $(command -v brew) ]]
     then
