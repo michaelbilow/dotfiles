@@ -1,6 +1,8 @@
+sourceBilow tools
+
 sudo apt-get install 
     $linuxAndMac \
     $linuxOnly
 
-bilowInstall docker
-bilowInstall nvidia
+installBilow docker
+installBilow nvidia

@@ -1,7 +1,5 @@
-sourceBilow tools
-
-installBilow $((if [ $machine == "MacOSX" ]; then "mac"; else "ubuntu"; fi))
-installBilow anaconda $machine
+installBilow $((if [[ "$machine" == "MacOSX" ]]; then "mac"; else "ubuntu"; fi))
+installBilow anaconda
 installBilow work_env
 installBilow tensorflow_env
 installBilow completion

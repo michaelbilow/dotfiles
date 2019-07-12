@@ -7,6 +7,8 @@ case "${unameOut}" in
     *)          machine="UNKNOWN:${unameOut}"
 esac
 
+export machine=$machine
+
 getBilow() {
     filename="$1.sh"
     curl -fsSL "${bilowGithub}/${filename}" -o $filename

@@ -30,7 +30,7 @@ fi
 
 bilowGithub="https://raw.githubusercontent.com/michaelbilow/dotfiles/master/install"
 functionsPath=/tmp/functions.sh
-curl -fsSL "${bilowGithub}/bootstrap/functions.sh" -o $functionsPath
+curl -fsSL "${bilowGithub}/bootstrap/functions.sh" > $functionsPath
 source $functionsPath
 
 installBilow startup
