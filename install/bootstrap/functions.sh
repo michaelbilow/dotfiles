@@ -1,5 +1,12 @@
 bilowGithub="https://raw.githubusercontent.com/michaelbilow/dotfiles/master/install"
 
+unameOut="$(uname -s)"
+case "${unameOut}" in
+    Linux*)     machine=Linux;;
+    Darwin*)    machine=MacOSX;;
+    *)          machine="UNKNOWN:${unameOut}"
+esac
+
 getBilow() {
     filename="$1.sh"
     curl -fsSL "${bilowGithub}/${filename}" -o $filename
