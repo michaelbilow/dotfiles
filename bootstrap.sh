@@ -11,10 +11,17 @@ esac
 
 export $machine
 
+bilowGithub="https://raw.githubusercontent.com/michaelbilow/dotfiles/master/install"
+
 getBilow() {
     filename="$1.sh"
-    curl -fsSL "https://raw.githubusercontent.com/michaelbilow/dotfiles/master/install/${filename}" -o "/tmp/$filename"
+    curl -fsSL "${bilowGithub}/${filename}" -o "/tmp/$filename"
     echo $filename
+}
+
+catBilow() {
+    filename="$1.sh"
+    curl "${bilowGithub}/${filename}"
 }
 
 installBilow() {
@@ -29,5 +36,4 @@ sourceBilow() {
     rm $filename
 }
 
-sourceBilow tools
 installBilow startup
