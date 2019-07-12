@@ -24,7 +24,7 @@ bilowGithub="https://raw.githubusercontent.com/michaelbilow/dotfiles/master/inst
 
 getBilow() {
     inputFilename="$1.sh"
-    outputFilename="/tmp/$filename"
+    outputFilename="/tmp/$inputFilename"
     curl -fsSL "${bilowGithub}/${inputFilename}" -o $outputFilename
     echo $outputFilename
 }
