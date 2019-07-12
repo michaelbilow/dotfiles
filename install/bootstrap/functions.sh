@@ -22,7 +22,6 @@ installBilow() {
 
 sourceBilow() {
     filename=$(getBilow $1)
-    exit;
     source $filename
     rm $filename
 }

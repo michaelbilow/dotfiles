@@ -1,5 +1,3 @@
-#!/bin/bash
-
 sourceBilow tools
 
 installBilow $(( $machine== "MacOSX" ? "mac" : "ubuntu" ))
