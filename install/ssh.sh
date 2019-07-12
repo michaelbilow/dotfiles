@@ -14,8 +14,8 @@ ghData=$( jq -n \
 
 curl -u "$email:$ghPass" --data $ghData https://api.github.com/user/keys
 
-read -p "Do you want to establish passwordless ssh from another machine? (y/N)" sshInvite
-if [[ $(echo $sshInvite | head -c 1) = "y" ]]
+passwordlessSSH="Do you want to set up passwordless ssh from another machine?" 
+if [[ $(askYesNo $passwordlessSSH) = "y" ]]
 then
-    womrhole invite
+    wormhole invite
 fi

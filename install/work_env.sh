@@ -14,10 +14,11 @@ $conda_dir/bin/conda install -n work -y \
   plotly \
   matplotlib \
   beautifulsoup4 \
-  h5py 
+  h5py
 
 $conda_dir/bin/conda install -n work -c conda-forge -y \
   jupyter_console \
+  jupyterlab \
   chartify \
   ipywidgets \
   ipywebrtc \
@@ -27,7 +28,6 @@ $conda_dir/bin/conda install -n work -c conda-forge -y \
   qgrid \
   fire \
   voila \
-  cookiecutter \
   geopandas \
   fiona \
   shapely \
@@ -35,12 +35,10 @@ $conda_dir/bin/conda install -n work -c conda-forge -y \
   altair \
   vega_datasets \
   nodejs \
-  pyarrow
+  pyarrow \
+  boto3
   
 $conda_dir/envs/work/bin/pip install -U cookiecutter
-
-# need jupyterlab >=1.0.0
-$conda_dir/envs/work/bin/pip install -U --pre jupyterlab 
 
 $conda_dir/envs/work/bin/jupyter labextension install \
   @jupyter-widgets/jupyterlab-manager \

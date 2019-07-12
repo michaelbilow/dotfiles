@@ -22,3 +22,8 @@ installBilow() {
 invertText() {
     echo -e "\e[7m$1\e[27m"
 }
+
+askYesNo() {
+    read -p "$1 (y/N) "
+    echo $REPLY | tr '[:upper:]' '[:lower:]' | head -c 1
+}
