@@ -37,7 +37,7 @@ installBilow() {
     filename=$(getBilow $1)
     shift
     chmod +x $filename
-    ./${filename} $@
+    sudo ./${filename} $@
     rm $filename
 }
 
