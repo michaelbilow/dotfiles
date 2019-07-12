@@ -20,7 +20,7 @@ else
     apt-get update && apt-get install -y sudo curl
 fi
 
-export bilowGithub="https://raw.githubusercontent.com/michaelbilow/dotfiles/master/install"
+bilowGithub="https://raw.githubusercontent.com/michaelbilow/dotfiles/master/install"
 functionsPath=/tmp/functions.sh
 curl -fsSL "${bilowGithub}/bootstrap/functions.sh" -o $functionsPath
 source $functionsPath
