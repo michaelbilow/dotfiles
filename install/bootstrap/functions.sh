@@ -1,7 +1,7 @@
 
 getBilow() {
     filename="$1.sh"
-    echo $bilowGithub
+    echo $bilowGithub >>/dev/stderr
     curl -fsSL "${bilowGithub}/${filename}" -o $filename
     echo $filename
 }
