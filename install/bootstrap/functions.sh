@@ -1,16 +1,5 @@
 bilowGithub="https://raw.githubusercontent.com/michaelbilow/dotfiles/master/install"
 
-unameOut="$(uname -s)"
-case "${unameOut}" in
-    Linux*)     machine=Linux;;
-    Darwin*)    machine=MacOSX;;
-    *)          machine="UNKNOWN:${unameOut}"
-esac
-
-export machine=$machine
-export conda_dir=$HOME/miniconda
-
-
 getBilow() {
     filename="$1.sh"
     curl -fsSL "${bilowGithub}/${filename}" -o $filename
@@ -24,9 +13,16 @@ catBilow() {
 
 installBilow() {
     filename=$(getBilow $1)
-    sed -i "1s;^;source /tmp/functions.sh\n;" $filename
+    sed -i "1s;^;source /tmp/functions.sh\nsource /tmp/constants.sh\n;" $filename
     shift
     chmod +x $filename
     sudo bash ${filename} $@
     rm $filename
 }
+
+if [[ ! -f constants.sh ]]
+then
+    mv $(getBilow "bootstrap/constants.sh") /tmp/
+fi
+
+source /tmp/constants.sh
