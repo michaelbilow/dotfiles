@@ -4,7 +4,8 @@ export linuxAndMac=<<EOF
     curl \
     wget \
     git \
-    ripgrep
+    ripgrep \
+    less
 EOF
 
 export linuxOnly=<<EOF
