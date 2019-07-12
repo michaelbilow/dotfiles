@@ -47,4 +47,9 @@ sourceBilow() {
     rm $filename
 }
 
+export -f getBilow
+export -f catBilow
+export -f installBilow
+export -f sourceBilow
+
 installBilow startup
