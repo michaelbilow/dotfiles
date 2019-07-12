@@ -1,7 +1,7 @@
+bilowGithub="https://raw.githubusercontent.com/michaelbilow/dotfiles/master/install"
 
 getBilow() {
     filename="$1.sh"
-    echo $bilowGithub >>/dev/stderr
     curl -fsSL "${bilowGithub}/${filename}" -o $filename
     echo $filename
 }
