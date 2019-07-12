@@ -13,11 +13,15 @@ catBilow() {
 
 installBilow() {
     filename=$(getBilow $1)
-    sed -i "1s;^;source /tmp/functions.sh\nsource /tmp/constants.sh\n;" $filename
+    sed -i "1s;^;source /tmp/functions.sh\nsource /tmp/constants.sh\ninvertText ${0};" $filename
     shift
     chmod +x $filename
     sudo bash ${filename} $@
     rm $filename
+}
+
+invertText() {
+    echo -e "\e[7m$1\e[27m"
 }
 
 constantsPath=/tmp/constants.sh

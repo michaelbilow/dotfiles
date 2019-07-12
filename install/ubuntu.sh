@@ -1,4 +1,4 @@
-sudo apt-get install 
+sudo apt-get update && sudo apt-get install 
     $linuxAndMac \
     $linuxOnly
 
