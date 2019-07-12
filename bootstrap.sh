@@ -10,14 +10,22 @@ case "${unameOut}" in
     *)          machine="UNKNOWN:${unameOut}"
 esac
 
-export machine=$machine
-
 if [[ $machine == "MacOSX" ]]
 then
-    /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-    brew install curl
+    if [[ ! $(command -v brew) ]]
+    then
+        /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+    fi
+    if [[! $(command -v curl) ]]
+    then 
+        brew install curl
+    fi
 else 
-    apt-get update && apt-get install -y sudo curl
+    apt-get update
+    if [[ ! ($(command -v sudo) && $(command -v curl)) ]]
+    then
+        apt-get install -y sudo curl
+    fi
 fi
 
 bilowGithub="https://raw.githubusercontent.com/michaelbilow/dotfiles/master/install"
