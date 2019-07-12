@@ -8,7 +8,7 @@ esac
 export machine=$machine
 export conda_dir=$HOME/miniconda
 
-export linuxAndMac=<<EOF
+export linuxAndMac=$(cat <<EOF
     gcc \
     vim \
     curl \
@@ -16,9 +16,9 @@ export linuxAndMac=<<EOF
     git \
     ripgrep \
     less
-EOF
+EOF)
 
-export linuxOnly=<<EOF
+export linuxOnly=$(cat <<EOF
     dkms \
     build-essential \
     linux-headers-generic \
@@ -30,7 +30,7 @@ export linuxOnly=<<EOF
     swig \
     xclip \
     xsel
-EOF
+EOF)
 
-export macOnly=<<EOF
-EOF
+export macOnly=$cat(<<EOF
+EOF)
