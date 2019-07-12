@@ -14,7 +14,8 @@ export linuxAndMac=$(cat <<EOF
     curl \
     wget \
     git \
-    less
+    less \
+    magic-wormhole
 EOF
 )
 
@@ -29,11 +30,13 @@ export linuxOnly=$(cat <<EOF
     openjdk-8-jdk \
     swig \
     xclip \
-    xsel
+    xsel \
+    sbt
 EOF
 )
 
 export macOnly=$(cat <<EOF
-    ripgrep
+    ripgrep \
+    scala
 EOF
 )
