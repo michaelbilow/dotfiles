@@ -16,7 +16,8 @@ export linuxAndMac=$(cat <<EOF
     git \
     ripgrep \
     less
-EOF)
+EOF
+)
 
 export linuxOnly=$(cat <<EOF
     dkms \
@@ -30,7 +31,9 @@ export linuxOnly=$(cat <<EOF
     swig \
     xclip \
     xsel
-EOF)
+EOF
+)
 
-export macOnly=$(cat<<EOF
-EOF)
+export macOnly=$(cat <<EOF
+EOF
+)
