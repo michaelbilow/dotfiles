@@ -14,7 +14,6 @@ export linuxAndMac=$(cat <<EOF
     curl \
     wget \
     git \
-    ripgrep \
     less
 EOF
 )
@@ -35,5 +34,6 @@ EOF
 )
 
 export macOnly=$(cat <<EOF
+    ripgrep
 EOF
 )
