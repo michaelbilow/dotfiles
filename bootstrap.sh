@@ -34,7 +34,9 @@ constantsPath=/tmp/constants.sh
 curl -fsSL "${bilowGithub}/functions.sh" > $functionsPath
 curl -fsSL "${bilowGithub}/constants.sh" > $constantsPath
 source $functionsPath
-
 installBilow startup
+if [[ $1 = "-i" ]]
+    installBilow interactive
+fi
 rm $functionsPath
 rm $constantsPath

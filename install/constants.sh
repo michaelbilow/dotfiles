@@ -16,7 +16,8 @@ export linuxAndMac=$(cat <<EOF
     git \
     less \
     magic-wormhole \
-    tmux
+    tmux \
+    jq
 EOF
 )
 
