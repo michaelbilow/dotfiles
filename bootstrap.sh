@@ -23,9 +23,8 @@ fi
 bilowGithub="https://raw.githubusercontent.com/michaelbilow/dotfiles/master/install"
 
 getBilow() {
-    inputFilename="$1.sh"
-    outputFilename="/tmp/$inputFilename"
-    curl -fsSL "${bilowGithub}/${inputFilename}" -o $outputFilename
+    filename="$1.sh"
+    curl -fsSL "${bilowGithub}/${filename}" -o $filename
     echo $outputFilename
 }
 
@@ -37,7 +36,8 @@ catBilow() {
 installBilow() {
     filename=$(getBilow $1)
     shift
-    sudo sh $filename $@
+    chmod +x $filename
+    ./${filename} $@
     rm $filename
 }
 
