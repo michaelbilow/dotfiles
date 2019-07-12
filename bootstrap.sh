@@ -1,4 +1,5 @@
 #!/bin/bash
+set -v
 
 # Determine machine type
 
