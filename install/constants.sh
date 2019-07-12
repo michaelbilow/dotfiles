@@ -32,5 +32,5 @@ export linuxOnly=$(cat <<EOF
     xsel
 EOF)
 
-export macOnly=$cat(<<EOF
+export macOnly=$(cat<<EOF
 EOF)
