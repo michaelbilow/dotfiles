@@ -30,9 +30,3 @@ installBilow() {
     sudo bash ${filename} $@
     rm $filename
 }
-
-sourceBilow() {
-    filename=$(getBilow $1)
-    source $filename
-    rm $filename
-}

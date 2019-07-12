@@ -1,4 +1,6 @@
-sourceBilow tools
+filename=$(getBilow tools)
+source $filename
+rm $filename
 
 echo $linuxAndMac
 echo "foo"
