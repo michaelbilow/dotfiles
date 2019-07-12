@@ -33,7 +33,7 @@ catBilow() {
 }
 
 installBilow() {
-    filename=$1
+    filename=$(getBilow $1)
     shift
     sudo sh $filename $@
     rm $filename
