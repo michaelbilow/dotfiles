@@ -1,3 +1,3 @@
-catBilow "bash/prompt_helpers" >> ~/.bash_profile
-catBilow "bash/abbrevs.sh" >> ~/.bash_profile
-catBilow "bash/mac_helpers.sh" >> ~/.bash_profile
+catBilow bash_prompt_helpers >> ~/.bash_profile
+catBilow bash_abbrevs.sh >> ~/.bash_profile
+catBilow bash_mac.sh >> ~/.bash_profile
