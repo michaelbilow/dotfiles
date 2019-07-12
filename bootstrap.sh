@@ -10,7 +10,7 @@ case "${unameOut}" in
     *)          machine="UNKNOWN:${unameOut}"
 esac
 
-export $machine
+export machine=$machine
 
 if [[ $machine == "MacOSX" ]]
 then
@@ -20,36 +20,8 @@ else
     apt-get update && apt-get install -y sudo curl
 fi
 
-bilowGithub="https://raw.githubusercontent.com/michaelbilow/dotfiles/master/install"
-
-getBilow() {
-    filename="$1.sh"
-    curl -fsSL "${bilowGithub}/${filename}" -o $filename
-    echo $filename
-}
-
-catBilow() {
-    filename="$1.sh"
-    curl "${bilowGithub}/${filename}"
-}
-
-installBilow() {
-    filename=$(getBilow $1)
-    shift
-    chmod +x $filename
-    sudo ./${filename} $@
-    rm $filename
-}
-
-sourceBilow() {
-    filename=$(getBilow $1)
-    source $filename
-    rm $filename
-}
-
-export -f getBilow
-export -f catBilow
-export -f installBilow
-export -f sourceBilow
+export bilowGithub="https://raw.githubusercontent.com/michaelbilow/dotfiles/master/install"
+curl -fsSL "https://raw.githubusercontent.com/michaelbilow/dotfiles/master/install/bootstrap/functions.sh" -o /tmp/functions.sh
+source /tmp/functions.sh
 
 installBilow startup

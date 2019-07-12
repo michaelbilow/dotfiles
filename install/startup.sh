@@ -1,7 +1,10 @@
 #!/bin/bash
+echo "foo"
+echo $(declare -F)
+
 sourceBilow tools
 
-installBilow $(($machine=="MacOSX" ? "mac" : "ubuntu"))
+installBilow $(( $machine== "MacOSX" ? "mac" : "ubuntu" ))
 installBilow anaconda $machine
 installBilow work_env
 installBilow tensorflow_env
