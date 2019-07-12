@@ -2,7 +2,8 @@ bilowGithub="https://raw.githubusercontent.com/michaelbilow/dotfiles/master/inst
 
 getBilow() {
     filename="$1.sh"
-    echo $(curl -fsSL "${bilowGithub}/${filename}" -O)
+    curl -fsSL "${bilowGithub}/${filename}" > $filename
+    echo $filename
 }
 
 catBilow() {
@@ -19,9 +20,11 @@ installBilow() {
     rm $filename
 }
 
-if [[ ! -f constants.sh ]]
+constantsPath=/tmp/constants.sh
+
+if [[ ! -f $constantsPath ]]
 then
-    mv $(getBilow constants) /tmp/
+    mv $(getBilow constants) $constantsPath
 fi
 
-source /tmp/constants.sh
+source $constantsPath
