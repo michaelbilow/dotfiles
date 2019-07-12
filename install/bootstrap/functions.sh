@@ -22,7 +22,7 @@ installBilow() {
 
 if [[ ! -f constants.sh ]]
 then
-    mv $(getBilow "bootstrap/constants.sh") /tmp/
+    mv $(getBilow "bootstrap/constants") /tmp/
 fi
 
 source /tmp/constants.sh
