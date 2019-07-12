@@ -1,10 +1,8 @@
 
 if [[ $machine = "MacOSX" ]]
 then 
-    echo "mac mac"
     installBilow mac
 else
-    echo "bun bun"
     installBilow ubuntu
 fi
 
