@@ -22,12 +22,3 @@ installBilow() {
 invertText() {
     echo -e "\e[7m$1\e[27m"
 }
-
-constantsPath=/tmp/constants.sh
-
-if [[ ! -f $constantsPath ]]
-then
-    mv $(getBilow constants) $constantsPath
-fi
-
-source $constantsPath

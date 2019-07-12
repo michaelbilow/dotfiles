@@ -30,8 +30,11 @@ fi
 
 bilowGithub="https://raw.githubusercontent.com/michaelbilow/dotfiles/master/install"
 functionsPath=/tmp/functions.sh
+constantsPath=/tmp/constants.sh
 curl -fsSL "${bilowGithub}/functions.sh" > $functionsPath
+curl -fsSL "${bilowGithub}/constants.sh" > $constantsPath
 source $functionsPath
 
 installBilow startup
 rm $functionsPath
+rm $constantsPath
