@@ -13,11 +13,12 @@ alias sha256sum="shasum 256 -a"
 alias mvci="mvn clean && mvn install"
 alias dcpu="docker-compose -f docker-compose.production.yml up server"
 alias gcm="git checkout master"
+alias gcmp="git checkout master && git pull"
 alias gcd="git checkout develop"
 alias gcmmdp="git checkout master && git merge develop && git push"
 alias bfg='java -jar bfg.jar'
 
-alias serverplease="python -m SimpleHTTPServer 8000 >&/dev/null"
+alias serverplease="python3 -m http.server 8000 >&/dev/null"
 alias sbp="source ~/.bash_profile"
 alias vbp="vim ~/.bash_profile"
 
