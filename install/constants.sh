@@ -33,7 +33,8 @@ export linuxOnly=$(cat <<EOF
     swig \
     xclip \
     xsel \
-    sbt
+    sbt \
+    apt-utils
 EOF
 )
 

@@ -6,5 +6,3 @@ git_dl () {
 
 }
 git_dl https://github.com/spencertipping/ni/raw/develop/ni ni
-git_dl https://github.com/b4b4r07/ssh-keyreg/raw/master/bin/ssh-keyreg ssh-keyreg
-
