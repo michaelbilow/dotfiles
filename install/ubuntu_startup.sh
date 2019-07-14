@@ -1,4 +1,4 @@
-systemStartPath="/us/bin/system_start.sh"
+systemStartPath="/usr/bin/system_start.sh"
 mv $(getBilow system_start) $systemStartPath
 chmod +x $systemStartPath
 

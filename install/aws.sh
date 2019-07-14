@@ -7,7 +7,7 @@ rm -r awscli-bundle
 
 # Getting credentials from another machine
 awsInvite="Do you want to send AWS credentials?"
-if [[ askYesNo $awsInvite ]]
+if [[ askYesNo $awsInvite == "y" ]]
 then
     mkdir -p $HOME/.aws
     echo "wormhole send your credentials from your other machine"

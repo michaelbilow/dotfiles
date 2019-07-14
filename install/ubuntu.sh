@@ -13,3 +13,4 @@ rm ripgrep_11.0.1_amd64.deb
 installBilow ubuntu_startup
 installBilow docker
 installBilow nvidia
+installBilow ubuntu_apps

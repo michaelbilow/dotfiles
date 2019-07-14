@@ -35,7 +35,7 @@ export linuxOnly=$(cat <<EOF
     xclip \
     xsel \
     sbt \
-    systemctl
+    systemd
 EOF
 )
 
