@@ -22,7 +22,7 @@ then
     fi
 else 
     apt-get update
-    if [[ ! ($(command -v sudo) && $(command -v curl) ]]
+    if [[ ! ($(command -v sudo) && $(command -v curl)) ]]
     then
         apt-get install -y sudo curl
     fi
