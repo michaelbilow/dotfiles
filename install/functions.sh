@@ -13,7 +13,8 @@ catBilow() {
 
 installBilow() {
     filename=$(getBilow $1)
-    sed -i "1s;^;source /tmp/functions.sh\nsource /tmp/constants.sh\ninvertText \$0\n;" $filename
+    sed -i "1s;^;source /tmp/functions.sh\nsource /tmp/constants.sh\ninvertText \"\\n\\nStarting \$0 from $BASH_SOURCE\\n\\n\"\n;" $filename
+    sed -e "\$a\ninvertText \"\\n\\nFinished \$0, returning to $BASH_SOURCE\\\n\\n"\n" $filename
     shift
     sudo bash ${filename} $@
     rm $filename
