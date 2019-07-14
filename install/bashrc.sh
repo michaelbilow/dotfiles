@@ -6,6 +6,4 @@ catBilow bash_profile.sh >> ~/.bash_profile
 if [[ $machine = "MacOSX" ]]
 then
     catBilow bash_mac.sh >> ~/.bash_profile
-else
-    ;;
 fi

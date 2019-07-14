@@ -12,20 +12,17 @@ esac
 
 if [[ $machine = "MacOSX" ]]
 then
-    if [[ ! $(command -v brew) ]]
-    then
-        /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-    fi
-    if [[! $(command -v curl) ]]
-    then 
-        brew install curl
-    fi
+    /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+    brew install \
+        curl
 else 
     apt-get update
-    if [[ ! ($(command -v sudo) && $(command -v curl)) ]]
-    then
-        apt-get install -y sudo curl
-    fi
+    apt-get install -y \
+        sudo \
+        curl \
+        gnupg \
+        apt-utils \
+        dialog
 fi
 
 bilowGithub="https://raw.githubusercontent.com/michaelbilow/dotfiles/master/install"

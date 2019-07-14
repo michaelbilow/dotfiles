@@ -14,7 +14,8 @@ $conda_dir/bin/conda install -n work -y \
   plotly \
   matplotlib \
   beautifulsoup4 \
-  h5py
+  h5py \
+  nodejs
 
 $conda_dir/bin/conda install -n work -c conda-forge -y \
   jupyter_console \
