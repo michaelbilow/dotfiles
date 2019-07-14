@@ -1,5 +1,5 @@
 #!/bin/bash
-set -ve
+set -veuo pipefail
 
 # Determine machine type
 

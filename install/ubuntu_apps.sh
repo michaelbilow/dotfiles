@@ -1,5 +1,7 @@
 if [[ $(command -v snap) ]]
 then
-    sudo snap install slack --classic
-    sudo snap install spotify
+    sudo snap install --clasic \
+        slack 
+        spotify
+        intellij-idea-community
 fi
