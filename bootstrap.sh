@@ -35,3 +35,4 @@ installBilow startup
 installBilow interactive
 rm $functionsPath
 rm $constantsPath
+sudo reboot
