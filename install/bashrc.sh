@@ -7,3 +7,5 @@ if [[ $machine = "MacOSX" ]]
 then
     catBilow bash_mac >> ~/.bash_profile
 fi
+
+source ~/.bash_profile
