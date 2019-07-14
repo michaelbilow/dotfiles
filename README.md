@@ -16,7 +16,7 @@ The `bootstrap.sh` file is available at:
 Personally I find the bitly link easier to remember, so:
 
 ```bash
-$ apt-get update && apt-get install curl
+$ apt-get update && apt-get install -y curl
 $ curl -fsSL http://bit.ly/bilow1804 > bootstrap.sh
 $ ./bootstrap.sh
 ```
