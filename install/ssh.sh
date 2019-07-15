@@ -1,3 +1,4 @@
+mkdir -p ~/.ssh
 read -p "Email for ssh key: " email
 ssh-keygen -t rsa -b 4096 -C $email -f ~/.ssh/id_rsa
 eval "$(ssh-agent -s)"
