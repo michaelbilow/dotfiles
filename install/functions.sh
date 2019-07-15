@@ -58,5 +58,5 @@ addHeaderAndFooter() {
     HEADER="source /tmp/constants.sh\nsource /tmp/functions.sh\ninvertTextAndLog \"Starting \$0 from $parentScript\"\n;"
     FOOTER="\ninvertTextandLog \"Finished \$0, returning to $parentScript\"\n"
     sed -i "1s;^;$HEADER" $filename
-    sed -e "\$a$FOOTER" $filename
+    sed -i "\$a $FOOTER" $filename
 }
