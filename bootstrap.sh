@@ -35,6 +35,6 @@ source $functionsPath
 installBilow startup
 installBilow interactive
 installBilow finish
-rm $functionsPath
-rm $constantsPath
+sudo rm $functionsPath
+sudo rm $constantsPath
 sudo reboot
