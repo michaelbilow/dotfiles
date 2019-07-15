@@ -48,10 +48,15 @@ askYesNo() {
     echo $REPLY | tr '[:upper:]' '[:lower:]' | head -c 1
 }
 
+getParentScript() {
+    echo $0
+}
+
 addHeaderAndFooter() {
     filename=$1
-    HEADER="source /tmp/constants.sh\nsource /tmp/functions.sh\ninvertText \"\\n\\nStarting \$0 from $BASH_SOURCE\\n\\n\"\n;"
-    FOOTER="\ninvertText \"\\n\\nFinished \$0, returning to $BASH_SOURCE\\n\\n\"\n"
+    parentScript=$(getParentScript)
+    HEADER="source /tmp/constants.sh\nsource /tmp/functions.sh\ninvertTextAndLog \"\\n\\nStarting \$0 from $parentScript\\n\\n\"\n;"
+    FOOTER="\ninvertTextandLog \"\\n\\nFinished \$0, returning to $parentScript\\n\\n\"\n"
     sed -i "1s;^;$HEADER" $filename
     sed -e "\$a$FOOTER" $filename
 }
