@@ -29,7 +29,8 @@ psgrepkill() {
   ps auxw | grep $1 | xargs -i kill -9 {}
 }
 
-if [ -x "$(xclip)" ] 
+if [[ $(command -v xclip) ]]
+then
   alias pbcopy='xsel --clipboard --input'
   alias pbpaste='xsel --clipboard --output'
 fi
