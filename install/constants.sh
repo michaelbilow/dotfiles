@@ -46,3 +46,10 @@ export macOnly=$(cat <<EOF
     scala
 EOF
 )
+
+export ubuntuApps=$(cat <<EOF
+    slack
+    spotify
+    intellij-idea-community
+    aws-cli 
+)

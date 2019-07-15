@@ -1,5 +1,3 @@
-# AWS CLI
-
 # Getting credentials from another machine
 awsInvite="Do you want to send AWS credentials?"
 if [[ $(askYesNo "$awsInvite") == "y" ]]
