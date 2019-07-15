@@ -24,7 +24,7 @@ installBilow() {
     filename=$(getBilow $1)
     addHeaderAndFooter $filename
     shift
-    sudo bash ${filename} $@
+    sudo bash -H ${filename} $@
     rm $filename
 }
 
