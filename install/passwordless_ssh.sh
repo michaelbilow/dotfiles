@@ -1,5 +1,5 @@
 passwordlessSSH="Do you want to set up passwordless ssh from another machine?" 
-if [[ $(askYesNo $passwordlessSSH) == "y" ]]
-then
+while [[ $(askYesNo $passwordlessSSH) == "y" ]]
+do
     wormhole invite
-fi
+done

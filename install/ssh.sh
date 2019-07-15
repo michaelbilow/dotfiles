@@ -1,8 +1,7 @@
 read -p "Email for ssh/github: " email
-ssh-keygen -t rsa -b 4096 -C $email
+ssh-keygen -t rsa -b 4096 -C $email -f ~/.ssh/id_rsa
 eval "$(ssh-agent -s)"
 ssh-add ~/.ssh/id_rsa
-ssh-keyreg -p 
 
 read -sp "Github password: " ghPass
 read -p "Name your new github ssh key: " pwName
