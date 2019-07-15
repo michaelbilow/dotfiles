@@ -31,20 +31,20 @@ installBilow() {
 # Helper Utilities
 
 invertText() {
-    echo -e "\e[7m$1\e[27m"
+    echo -e "\e[7m$@\e[27m"
 }
 
 log () {
-    echo $1 >> $installLog
+    echo "$@" >> $installLogfile
 }
 
 invertTextAndLog () {
-    invertText $1
-    log $1
+    invertText $@
+    log $@
 }
 
 askYesNo() {
-    read -p "$1 (y/N) "
+    read -p "$@ (y/N) "
     echo $REPLY | tr '[:upper:]' '[:lower:]' | head -c 1
 }
 
@@ -55,8 +55,8 @@ getParentScript() {
 addHeaderAndFooter() {
     filename=$1
     parentScript=$(getParentScript)
-    HEADER="source /tmp/constants.sh\nsource /tmp/functions.sh\ninvertTextAndLog \"\\n\\nStarting \$0 from $parentScript\\n\\n\"\n;"
-    FOOTER="\ninvertTextandLog \"\\n\\nFinished \$0, returning to $parentScript\\n\\n\"\n"
+    HEADER="source /tmp/constants.sh\nsource /tmp/functions.sh\ninvertTextAndLog \"Starting \$0 from $parentScript\"\n;"
+    FOOTER="\ninvertTextandLog \"Finished \$0, returning to $parentScript\"\n"
     sed -i "1s;^;$HEADER" $filename
     sed -e "\$a$FOOTER" $filename
 }

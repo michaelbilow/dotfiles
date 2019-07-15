@@ -30,7 +30,7 @@ functionsPath=/tmp/functions.sh
 constantsPath=/tmp/constants.sh
 curl -fsSL "${bilowGithub}/functions.sh" > $functionsPath
 curl -fsSL "${bilowGithub}/constants.sh" > $constantsPath
-echo "export installLogFile=\"/tmp/$(date +%Y%m%d%H%M%S)_install.log\"" >> $constantsPath
+echo "export installLogfile=\"/tmp/$(date +%Y%m%d%H%M%S)_install.log\"" >> $constantsPath
 source $functionsPath
 installBilow startup
 installBilow interactive
