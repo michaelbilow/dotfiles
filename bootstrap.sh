@@ -34,6 +34,7 @@ echo "export installLogfile=\"/tmp/$(date +%Y%m%d%H%M%S)_install.log\"" >> $cons
 source $functionsPath
 installBilow startup
 installBilow interactive
+installBilow finish
 rm $functionsPath
 rm $constantsPath
 sudo reboot
