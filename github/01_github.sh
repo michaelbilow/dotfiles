@@ -7,7 +7,7 @@ echo ""
 read -p "Name your new github ssh key: " pwName
 
 ghData=$(jq -n \
-            --arg key "$(cat $HOME/.ssh/id_rsa.pub)" \
+            --arg key "$(cat $homeDir/.ssh/id_rsa.pub)" \
             --arg title "$pwname" \
             '{title: $title, key: $key}' )
 

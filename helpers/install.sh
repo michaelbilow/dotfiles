@@ -15,7 +15,7 @@ then
     installFolder ssh
 fi
 
-githubSSH="Do you want to set up a github token for your ssh key at $HOME/.ssh/id_rsa.pub?"
+githubSSH="Do you want to set up a github token for your ssh key at $homeDir/.ssh/id_rsa.pub?"
 if [[ $(askYesNo "$githubSSH") == "y" ]]
 then
     installFolder github

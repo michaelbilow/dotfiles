@@ -1,8 +1,8 @@
-mkdir -p $HOME/bin
-echo "export PATH=\"\$PATH:$HOME/bin\"" >> ~/.bashrc
+mkdir -p $homeDir/bin
+echo "export PATH=\"\$PATH:$homeDir/bin\"" >> ~/.bashrc
 
 git_dl () {
-    outputPath=$HOME/bin/$2
+    outputPath=$homeDir/bin/$2
     curl -sL $1 > $outputPath && chmod +x $outputPath
 
 }
