@@ -9,10 +9,11 @@ installFolder() {
 installBilow() {
     filename=$1
     parentScript=$(getParentScript)
+    childScript=$(basename $filename)
     shift
-    invertTextAndLog "Starting $filename from $parentScript"
+    invertTextAndLog "Starting $childScript from $parentScript"
     sudo bash -H ${filename} $@
-    invertTextAndLog "Finished $filename, returning to $parentScript"
+    invertTextAndLog "Finished $childScript, returning to $parentScript"
 }
 
 # Helper Utilities
@@ -36,5 +37,5 @@ askYesNo() {
 }
 
 getParentScript() {
-    echo $0
+    echo $(basename $0)
 }
