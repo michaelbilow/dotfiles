@@ -1,6 +1,7 @@
 ## Install Script
 
 export homeDir=$HOME # a flexible home directory variable
+export condaDir="${homeDir}/miniconda"
 
 installFolder $machine
 installFolder bash
@@ -18,7 +19,8 @@ addUser="Do you want to add another user?"
 while [[ $(askYesNo "$addUser") == "y" ]]
 do
     read -p "Enter the username to add: " newUser
-    homeDir="/home/$newUser"
+    export homeDir="/home/$newUser"
+    export condaDir="${homeDir}/miniconda"
     installFolder new_user
     installFolder bash 
     installFolder python

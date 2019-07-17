@@ -1,4 +1,3 @@
-condaDir="${homeDir}/miniconda"
 condaUrl="https://repo.continuum.io/miniconda/Miniconda3-latest-${distro}-x86_64.sh"
 curl -fsSL $condaUrl > miniconda.sh
 rm -rf $condaDir
