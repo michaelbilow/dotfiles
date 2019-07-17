@@ -2,12 +2,11 @@ source "$(dirname $BASH_SOURCE)/helpers/constants.sh"
 source "$(dirname $BASH_SOURCE)/helpers/functions.sh"
 
 export installLogfile="/tmp/$(date +%Y%m%d%H%M%S)_install.log"
-export homedir=$HOME
-export distro=$distro
+export -f askYesNo
 
 installFolder $machine
 installFolder bash
-installFolder python
+installFolder python $homedir $distro $hasNvidia
 installFolder git_tools
 installFolder ssh
 
@@ -18,7 +17,7 @@ do
     export homedir="/home/$newUser"
     export newUser=$newUser
     installFolder new_user
-    installFolder bash
-    installFolder python
+    installFolder bash $homedir
+    installFolder python $homedir $distro $hasNvidia
     sudo chown -R $homedir $newUser:$newUser
 done

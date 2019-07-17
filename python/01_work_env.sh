@@ -1,4 +1,5 @@
 # Install work python
+conda_dir=$1
 PYTHON_VERSION=3.6
 rm -rf $conda_dir/envs/work
 $conda_dir/bin/conda create -n work -y python=$PYTHON_VERSION
