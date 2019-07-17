@@ -32,8 +32,10 @@ esac
 if [[ $machine == "ubuntu" ]]
 then 
     distro="Linux"
-else
+elif [[ $machine == "mac" ]]
     distro="MacOSX"
+else
+    exit 1
 fi
 
 export distro=$distro
