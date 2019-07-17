@@ -1,11 +1,5 @@
 # Install Utilities
 
-installFolder() {
-    folderName="$(dirname $(dirname $BASH_SOURCE))/$1"
-    shift
-    ls -d $folderName/* | xargs -I filename installBilow filename $@
-}
-
 installBilow() {
     filename=$1
     parentScript=$(getParentScript)
@@ -15,6 +9,15 @@ installBilow() {
     sudo bash -H ${filename} $@
     invertTextAndLog "Finished $childScript, returning to $parentScript"
 }
+
+export -f installBilow
+
+installFolder() {
+    folderName="$(dirname $(dirname $BASH_SOURCE))/$1"
+    shift
+    ls -d $folderName/* | xargs -I filename bash -c "installBilow filename $@"
+}
+
 
 # Helper Utilities
 
