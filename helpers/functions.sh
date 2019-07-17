@@ -18,20 +18,16 @@ askYesNo() {
     echo $REPLY | tr '[:upper:]' '[:lower:]' | head -c 1
 }
 
-getParentScript() {
-    echo $(basename $BASH_SOURCE)
-}
-
 # Install Utilities
 
 installBilow() {
     filename=$1
-    parentScript=$(getParentScript)
+    parentFolder=$(basename $(dirname $filename))
     childScript=$(basename $filename)
     shift
-    invertTextAndLog "Starting $childScript from $parentScript"
+    invertTextAndLog "Starting $childScript from $parentFolder"
     sudo bash -H ${filename} $@
-    invertTextAndLog "Finished $childScript, returning to $parentScript"
+    invertTextAndLog "Finished $childScript, returning to $parentFolder"
 }
 
 export -f installBilow
