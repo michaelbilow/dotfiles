@@ -34,6 +34,6 @@ installFolder() {
     shift
     for filename in $(ls -d $folderName/*)
     do
-        installFile filename $@"
+        installFile filename $@
     done
 }
