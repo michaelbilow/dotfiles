@@ -55,7 +55,8 @@ export linuxAndMac=$(cat <<EOF
     tmux \
     jq \
     gnupg \
-    nodejs
+    nodejs \
+    npm
 EOF
 )
 
