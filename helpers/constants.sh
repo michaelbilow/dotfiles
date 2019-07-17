@@ -12,7 +12,7 @@ else
     nvidia=""
 fi
 
-case "$nvidia" in 
+case "$nvidia" in
     *nvidia*)   hasNvidia=y;;
     *)          hasNvidia=n
 esac
@@ -59,8 +59,8 @@ EOF
 )
 
 export ubuntuApps=$(cat <<EOF
-    slack
-    spotify
-    intellij-idea-community
-    aws-cli 
+    slack \
+    spotify \
+    intellij-idea-community \
+    aws-cli \
 )
