@@ -1,7 +1,7 @@
 # Install Utilities
 
 installFolder() {
-    folderName="$($dirname $(dirname $BASH_SOURCE))/$1"
+    folderName="$(dirname $(dirname $BASH_SOURCE))/$1"
     shift
     ls -d $folderName | xargs -I filename installBilow filename $@
 }
