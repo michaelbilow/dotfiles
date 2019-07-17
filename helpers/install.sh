@@ -3,7 +3,7 @@ homedir=$HOME
 
 installFolder $machine
 installFolder bash
-installFolder python "$homedir/miniconda" $distro $hasNvidia
+installFolder python "$homedir/miniconda $distro $hasNvidia"
 installFolder git_tools
 
 setupSSH="Do you want to set up SSH access?"

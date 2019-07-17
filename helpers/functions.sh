@@ -37,6 +37,7 @@ export -f invertText
 export -f log
 
 installFolder() {
+    echo $@
     folderName="$(dirname $BASH_SOURCE)/$1"
     shift
     ls -d $folderName/* | xargs -I filename bash -c "installFile filename $@"
