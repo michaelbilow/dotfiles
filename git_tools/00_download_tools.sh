@@ -1,4 +1,5 @@
 mkdir -p $HOME/bin
+echo "export PATH=\"\$PATH:$HOME/bin\"" >> ~/.bashrc
 
 git_dl () {
     outputPath=$HOME/bin/$2

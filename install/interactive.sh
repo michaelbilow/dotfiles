@@ -1,3 +1,0 @@
-installBilow ssh
-installBilow passwordless_ssh
-installBilow aws

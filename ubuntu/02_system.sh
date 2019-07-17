@@ -1,5 +1,3 @@
-installBilow ubuntu_keys
-
 sudo apt-get update
 
 sudo apt-get install -y \
@@ -12,8 +10,3 @@ rm ripgrep_11.0.1_amd64.deb
 
 sudo apt-get autoremove
 sudo apt-get autoclean
-
-installBilow docker
-installBilow nvidia
-installBilow ubuntu_apps
-installBilow ubuntu_startup

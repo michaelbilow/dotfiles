@@ -14,7 +14,8 @@ if [[ $machine = "MacOSX" ]]
 then
     /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
     brew install \
-        curl
+        curl \
+        unzip
 else 
     apt-get update
     apt-get install -y \
@@ -22,19 +23,15 @@ else
         curl \
         gnupg \
         apt-utils \
-        dialog
+        dialog \
+        unzip
 fi
 
-bilowGithub="https://raw.githubusercontent.com/michaelbilow/dotfiles/master/install"
-functionsPath=/tmp/functions.sh
-constantsPath=/tmp/constants.sh
-curl -fsSL "${bilowGithub}/functions.sh" > $functionsPath
-curl -fsSL "${bilowGithub}/constants.sh" > $constantsPath
-echo "export installLogfile=\"/tmp/$(date +%Y%m%d%H%M%S)_install.log\"" >> $constantsPath
-source $functionsPath
-installBilow startup
-installBilow interactive
-installBilow finish
-sudo rm $functionsPath
-sudo rm $constantsPath
+dotfilesPath=/tmp/dotfiles
+dotfilesZipPath="${dotfilesPath}.zip"
+dotfilesUrl=https://github.com/michaelbilow/dotfiles/archive/master.zip
+
+curl -fsSL $dotfilesUrl > $dotfilesZipPath
+unzip $dotfilesZipPath -d $dotfilesPath
+sudo bash -H $dotfilesPath/install.sh
 sudo reboot

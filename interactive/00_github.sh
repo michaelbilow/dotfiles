@@ -1,7 +1,11 @@
 githubSSH="Do you want to set up a github token for your ssh key at $HOME/.ssh/id_rsa.pub?"
 if [[ $(askYesNo "$githubSSH") == "y" ]]
 then
+    echo "sorry, not working with 2FA right now"
+    exit 0
+    # TODO: Fix!
     read -sp "Github password: " ghPass
+    echo ""
     read -p "Name your new github ssh key: " pwName
 
     ghData=$(jq -n \

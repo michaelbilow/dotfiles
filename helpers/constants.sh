@@ -1,12 +1,18 @@
-unameOut="$(uname -s)"
+unameOut="$(uname -v | tr [:upper:] [:lower:] | tr -s ' ' | tr ' ' '_')"
 case "${unameOut}" in
-    Linux*)     machine=Linux;;
-    Darwin*)    machine=MacOSX;;
-    *)          machine="UNKNOWN:${unameOut}"
+    *linux*)     machine=ubuntu;;
+    *darwin*)    machine=mac;;
+    *)           machine="UNKNOWN:${unameOut}"
+esac
+
+nvidia=$(lspci | tr '[:upper:]' '[:lower:]' | grep nvidia)
+case "$nvidia" in 
+    *nvidia*)   hasNvidia=y;;
+    *)          hasNvidia=n
 esac
 
 export machine=$machine
-export conda_dir=$HOME/miniconda
+export hasNvidia=$hasNvidia
 
 export linuxAndMac=$(cat <<EOF
     gcc \
@@ -19,8 +25,7 @@ export linuxAndMac=$(cat <<EOF
     tmux \
     jq \
     gnupg \
-    nodejs \
-    unzip
+    nodejs
 EOF
 )
 

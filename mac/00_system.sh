@@ -6,8 +6,8 @@ then
 fi
 
 # Docker
-echo "Install Docker from https://hub.docker.com/editions/community/docker-ce-desktop-mac"
+invertAndLog "Install Docker from https://hub.docker.com/editions/community/docker-ce-desktop-mac"
 
- brew install 
+brew install 
     $linuxAndMac \
     $macOnly
