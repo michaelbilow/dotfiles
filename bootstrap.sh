@@ -33,6 +33,6 @@ dotfilesZipPath="$dotfilesPath.zip"
 dotfilesUrl=https://github.com/michaelbilow/dotfiles/archive/master.zip
 
 curl -fsSL $dotfilesUrl > $dotfilesZipPath
-unzip $dotfilesZipPath
+unzip $dotfilesZipPath -d /tmp
 sudo bash -H $dotfilesPath/install.sh
 sudo reboot

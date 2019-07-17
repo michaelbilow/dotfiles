@@ -1,5 +1,5 @@
-source helpers/constants.sh
-source helpers/functions.sh
+source "$(dirname $BASH_SOURCE)/../helpers/constants.sh"
+source "$(dirname $BASH_SOURCE)/../helpers/functions.sh"
 installLogfile="/tmp/$(date +%Y%m%d%H%M%S)_install.log"
 
 if [[ $machine != "mac" && $machine != ubuntu ]]
