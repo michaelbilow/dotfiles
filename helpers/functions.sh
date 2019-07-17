@@ -35,6 +35,9 @@ installBilow() {
 }
 
 export -f installBilow
+export -f getParentScript
+export -f askYesNo
+export -f invertTextAndLog
 
 installFolder() {
     folderName="$(dirname $(dirname $BASH_SOURCE))/$1"
