@@ -4,7 +4,7 @@ cat "${staticScriptsDir}/bash_variables.sh" >> $homedir/.bashrc
 cat "${staticScriptsDir}/bash_aliases.sh" >> $homedir/.bash_aliases
 cat "${staticScriptsDir}/bash_profile.sh" >> $homedir/.bash_profile
 
-if [[ $machine = "MacOSX" ]]
+if [[ $machine = "mac" ]]
 then
     cat "${staticScriptsDir}/bash_mac.sh" >> $homedir/.bashrc
 fi
