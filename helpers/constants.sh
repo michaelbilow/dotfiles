@@ -39,6 +39,7 @@ fi
 export distro=$distro
 export machine=$machine
 export hasNvidia=$hasNvidia
+export installLogfile="/tmp/$(date +%Y%m%d%H%M%S)_install.log"
 
 export linuxAndMac=$(cat <<EOF
     gcc \
@@ -68,7 +69,8 @@ export linuxOnly=$(cat <<EOF
     xclip \
     xsel \
     sbt \
-    systemd
+    systemd \
+    keychain
 EOF
 )
 

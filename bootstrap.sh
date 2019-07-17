@@ -53,5 +53,9 @@ dotfilesUrl=https://github.com/michaelbilow/dotfiles/archive/master.zip
 
 curl -fsSL $dotfilesUrl > $dotfilesZipPath
 unzip $dotfilesZipPath -d /tmp
+cat $dotfilesPath/helpers/constants.sh \
+    $dotfilesPath/helpers/functions.sh \
+    $dotfilesPath/helpers/install.sh > \
+    $dotfilesPath/install.sh
 sudo bash -H $dotfilesPath/install.sh
 sudo reboot
