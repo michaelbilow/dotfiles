@@ -3,14 +3,15 @@ set -veuo pipefail
 
 # Determine machine type
 
-unameOut="$(uname -s)"
+unameOut="$(uname -v | tr [:upper:] [:lower:] | tr -s ' ' | tr ' ' '_')"
 case "${unameOut}" in
-    Linux*)     machine=Linux;;
-    Darwin*)    machine=MacOSX;;
-    *)          machine="UNKNOWN:${unameOut}"
+    *linux*)     machine=ubuntu;;
+    *darwin*)    machine=mac;;
+    *)           machine="UNKNOWN:${unameOut}"
 esac
 
-if [[ $machine = "MacOSX" ]]
+
+if [[ $machine = "mac" ]]
 then
     /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
     brew install \
