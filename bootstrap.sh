@@ -28,11 +28,11 @@ else
         unzip
 fi
 
-dotfilesPath=/tmp/dotfiles
-dotfilesZipPath="${dotfilesPath}.zip"
+dotfilesPath="/tmp/dotfiles-master"
+dotfilesZipPath="$dotfilesPath.zip"
 dotfilesUrl=https://github.com/michaelbilow/dotfiles/archive/master.zip
 
 curl -fsSL $dotfilesUrl > $dotfilesZipPath
-unzip $dotfilesZipPath -d $dotfilesPath
+unzip $dotfilesZipPath
 sudo bash -H $dotfilesPath/install.sh
 sudo reboot
