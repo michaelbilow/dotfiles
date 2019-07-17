@@ -29,14 +29,11 @@ installFile() {
     invertTextAndLog "Finished $childScript, returning to $parentFolder install"
 }
 
-export -f installFile
-export -f askYesNo
-export -f invertTextAndLog
-export -f invertText
-export -f log
-
 installFolder() {
     folderName="$(dirname $BASH_SOURCE)/$1"
     shift
-    ls -d $folderName/* | xargs -I filename bash -c "installFile filename $@"
+    for filename in $(ls -d $folderName/*)
+    do
+        installFile filename $@"
+    done
 }
