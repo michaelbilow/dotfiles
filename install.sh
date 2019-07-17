@@ -11,12 +11,12 @@ installFolder git_tools
 installFolder ssh
 
 addUser="Do you want to add another user?"
-while [[ $(askYesNo "$addUser") ]]
+while [[ $(askYesNo "$addUser") = "y" ]]
 do
     read -p "Enter the username to add: " newUser
     export homedir="/home/$newUser"
-    export 
-    installFolder newUser
+    export newUser=$newUser
+    installFolder new_user
     installFolder bash
     installFolder python
     sudo chown -R $homedir $newUser:$newUser
