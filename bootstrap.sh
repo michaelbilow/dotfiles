@@ -36,7 +36,7 @@ then
         curl \
         unzip
 else 
-    apt-get update
+    apt-get update && \
     apt-get install -y \
         sudo \
         curl \
