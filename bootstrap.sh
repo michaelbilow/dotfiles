@@ -51,6 +51,7 @@ dotfilesPath="/tmp/dotfiles-master"
 dotfilesZipPath="$dotfilesPath.zip"
 dotfilesUrl=https://github.com/michaelbilow/dotfiles/archive/master.zip
 
+rm -rf $dotfilesPath
 curl -fsSL $dotfilesUrl > $dotfilesZipPath
 unzip $dotfilesZipPath -d /tmp
 cat $dotfilesPath/helpers/constants.sh \

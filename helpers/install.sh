@@ -2,7 +2,7 @@
 homedir=$HOME
 
 installFolder $machine
-installFolder bash
+installFolder bash $homedir
 installFolder python "$homedir/miniconda $distro $hasNvidia"
 installFolder git_tools
 
