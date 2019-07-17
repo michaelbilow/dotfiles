@@ -59,4 +59,5 @@ cat $dotfilesPath/helpers/constants.sh \
     $dotfilesPath/helpers/install.sh > \
     $dotfilesPath/install.sh
 sudo bash -H $dotfilesPath/install.sh
+rm -rf $dotfilesPath
 sudo reboot

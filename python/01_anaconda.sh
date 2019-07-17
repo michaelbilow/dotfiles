@@ -1,8 +1,5 @@
-conda_dir=$1
-distro=$2
-echo $distro
+conda_dir="${homedir}/miniconda"
 conda_url="https://repo.continuum.io/miniconda/Miniconda3-latest-${distro}-x86_64.sh"
-echo $conda_url
 curl -fsSL $conda_url > miniconda.sh
 rm -rf $conda_dir
 bash miniconda.sh -b -p $conda_dir

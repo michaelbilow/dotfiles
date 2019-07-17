@@ -2,8 +2,8 @@
 homedir=$HOME
 
 installFolder $machine
-installFolder bash $homedir
-installFolder python "$homedir/miniconda $distro $hasNvidia"
+installFolder bash
+installFolder python
 installFolder git_tools
 
 setupSSH="Do you want to set up SSH access?"
@@ -18,7 +18,7 @@ do
     read -p "Enter the username to add: " newUser
     homedir="/home/$newUser"
     installFolder new_user
-    installFolder bash $homedir
-    installFolder python "$homedir/miniconda" $distro $hasNvidia
+    installFolder bash 
+    installFolder python
     sudo chown -R $homedir $newUser:$newUser
 done
