@@ -14,10 +14,10 @@ esac
 if [[ $machine == "linux" ]]
 then
     if [[ ! $( command -v apt-get ) ]]
-    then 
+    then
         echo "This script only works for ubuntu linux"
         exit 1;
-    else 
+    else
         machine=ubuntu
     fi
 fi
@@ -43,7 +43,7 @@ else
         gnupg \
         apt-utils \
         dialog \
-        unzip \ 
+        unzip \
         pciutils
 fi
 
