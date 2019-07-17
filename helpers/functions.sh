@@ -1,24 +1,3 @@
-# Install Utilities
-
-installBilow() {
-    filename=$1
-    parentScript=$(getParentScript)
-    childScript=$(basename $filename)
-    shift
-    invertTextAndLog "Starting $childScript from $parentScript"
-    sudo bash -H ${filename} $@
-    invertTextAndLog "Finished $childScript, returning to $parentScript"
-}
-
-export -f installBilow
-
-installFolder() {
-    folderName="$(dirname $(dirname $BASH_SOURCE))/$1"
-    shift
-    ls -d $folderName/* | xargs -I filename bash -c "installBilow filename $@"
-}
-
-
 # Helper Utilities
 
 invertText() {
@@ -41,4 +20,24 @@ askYesNo() {
 
 getParentScript() {
     echo $(basename $0)
+}
+
+# Install Utilities
+
+installBilow() {
+    filename=$1
+    parentScript=$(getParentScript)
+    childScript=$(basename $filename)
+    shift
+    invertTextAndLog "Starting $childScript from $parentScript"
+    sudo bash -H ${filename} $@
+    invertTextAndLog "Finished $childScript, returning to $parentScript"
+}
+
+export -f installBilow
+
+installFolder() {
+    folderName="$(dirname $(dirname $BASH_SOURCE))/$1"
+    shift
+    ls -d $folderName/* | xargs -I filename bash -c "installBilow filename $@"
 }

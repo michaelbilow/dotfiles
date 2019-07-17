@@ -1,5 +1,5 @@
 systemStartPath="/usr/bin/system_start.sh"
-cp "$(dirname $BASH_SOURCE)/static_scripts/system_start.sh $systemStartPath
+cp "$(dirname $BASH_SOURCE)/static_scripts/system_start.sh" $systemStartPath
 chmod +x $systemStartPath
 
 systemServicePath="/etc/systemd/system/system_start.service"
