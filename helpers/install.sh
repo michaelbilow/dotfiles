@@ -3,6 +3,7 @@ homedir=$HOME
 
 installFolder $machine
 installFolder bash
+source ${homedir}/.bash_profile
 installFolder python
 installFolder git_tools
 

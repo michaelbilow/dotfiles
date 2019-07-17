@@ -37,3 +37,6 @@ installFolder() {
         installFile $filename $@
     done
 }
+
+# Functions available to subshells
+export -f askYesNo
