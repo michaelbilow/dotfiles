@@ -43,6 +43,8 @@ export distro=$distro
 export machine=$machine
 export hasNvidia=$hasNvidia
 export installLogfile="/tmp/$(date +%Y%m%d%H%M%S)_install.log"
+export LC_ALL=C.UTF-8
+export LANG=C.UTF-8
 
 export linuxAndMac=$(cat <<EOF
     gcc \
