@@ -24,9 +24,8 @@ installBilow() {
     filename=$1
     parentFolder=$(basename $(dirname $filename))
     childScript=$(basename $filename)
-    shift
     invertTextAndLog "Starting $childScript from $parentFolder"
-    sudo bash -H ${filename} $@
+    sudo -H bash $@
     invertTextAndLog "Finished $childScript, returning to $parentFolder"
 }
 

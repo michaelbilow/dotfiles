@@ -6,7 +6,7 @@ export -f askYesNo
 
 installFolder $machine
 installFolder bash
-installFolder python $homedir $distro $hasNvidia
+installFolder python "$homedir/miniconda" $distro $hasNvidia
 installFolder git_tools
 installFolder ssh
 
