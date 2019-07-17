@@ -7,9 +7,11 @@ export homedir=$HOME
 installFolder $machine
 installFolder bash
 installFolder python
+installFolder git_tools
+installFolder ssh
 
 addUser="Do you want to add another user?"
-while [[ $(askYesNo $addUser) ]]
+while [[ $(askYesNo "$addUser") ]]
 do
     read -p "Enter the username to add: " newUser
     export homedir="/home/$newUser"
