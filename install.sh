@@ -1,7 +1,7 @@
 source "$(dirname $BASH_SOURCE)/helpers/constants.sh"
 source "$(dirname $BASH_SOURCE)/helpers/functions.sh"
-installLogfile="/tmp/$(date +%Y%m%d%H%M%S)_install.log"
 
+export installLogfile="/tmp/$(date +%Y%m%d%H%M%S)_install.log"
 export homedir=$HOME
 
 installFolder $machine

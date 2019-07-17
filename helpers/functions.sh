@@ -19,7 +19,7 @@ askYesNo() {
 }
 
 getParentScript() {
-    echo $(basename $0)
+    echo $(basename $BASH_SOURCE)
 }
 
 # Install Utilities
