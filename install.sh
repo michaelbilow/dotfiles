@@ -3,8 +3,7 @@ source "$(dirname $BASH_SOURCE)/helpers/functions.sh"
 
 export installLogfile="/tmp/$(date +%Y%m%d%H%M%S)_install.log"
 export homedir=$HOME
-echo $homedir
-exit 0;
+export distro=$distro
 
 installFolder $machine
 installFolder bash
