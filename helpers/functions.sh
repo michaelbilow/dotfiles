@@ -25,6 +25,7 @@ installFile() {
     parentFolder=$(basename $(dirname $filename))
     childScript=$(basename $filename)
     invertTextAndLog "Starting $childScript from $parentFolder install"
+    echo $@
     sudo -H bash $@
     invertTextAndLog "Finished $childScript, returning to $parentFolder install"
 }
