@@ -5,7 +5,12 @@ installFolder $machine
 installFolder bash
 installFolder python "$homedir/miniconda" $distro $hasNvidia
 installFolder git_tools
-installFolder ssh
+
+setupSSH="Do you want to set up SSH access?"
+if [[ $(askYesNo "$setupSSH") == "y" ]]
+then
+    installFolder ssh
+fi
 
 addUser="Do you want to add another user?"
 while [[ $(askYesNo "$addUser") == "y" ]]
