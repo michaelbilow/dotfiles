@@ -3,7 +3,7 @@
 installFolder() {
     folderName=$1
     shift
-    ls -d $folderName | xargs -O -I filename installBilow filename $@
+    ls -d $folderName | xargs -I filename installBilow filename $@
 }
 
 installBilow() {

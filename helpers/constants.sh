@@ -1,9 +1,21 @@
-unameOut="$(uname -v | tr [:upper:] [:lower:] | tr -s ' ' | tr ' ' '_')"
+unameOut="$(uname -a | tr [:upper:] [:lower:] | tr -s ' ' | tr ' ' '_')"
 case "${unameOut}" in
-    *linux*)     machine=ubuntu;;
+    *ubuntu*)    machine=ubuntu;;
+    *linux*)     machine=linux;;
     *darwin*)    machine=mac;;
     *)           machine="UNKNOWN:${unameOut}"
 esac
+
+if [[ $machine == "linux" ]]
+then
+    if [[ ! $( command -v apt-get ) ]]
+    then
+        echo "This script only works for ubuntu linux"
+        exit 1;
+    else
+        machine=ubuntu
+    fi
+fi
 
 if [[ $machine == "ubuntu" ]]
 then
