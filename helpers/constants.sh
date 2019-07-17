@@ -62,5 +62,6 @@ export ubuntuApps=$(cat <<EOF
     slack \
     spotify \
     intellij-idea-community \
-    aws-cli \
+    aws-cli
+EOF
 )
