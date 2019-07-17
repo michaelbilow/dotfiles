@@ -1,9 +1,9 @@
 ## Install Script
-homedir=$HOME
+homeDir=$HOME
 
 installFolder $machine
 installFolder bash
-source ${homedir}/.bash_profile
+source ${homeDir}/.bash_profile
 installFolder python
 installFolder git_tools
 
@@ -17,9 +17,9 @@ addUser="Do you want to add another user?"
 while [[ $(askYesNo "$addUser") == "y" ]]
 do
     read -p "Enter the username to add: " newUser
-    homedir="/home/$newUser"
+    homeDir="/home/$newUser"
     installFolder new_user
     installFolder bash 
     installFolder python
-    sudo chown -R $homedir $newUser:$newUser
+    sudo chown -R $homeDir $newUser:$newUser
 done

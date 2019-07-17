@@ -1,10 +1,10 @@
 # Install work python
-conda_dir=$1
+condaDir=$1
 PYTHON_VERSION=3.6
-rm -rf $conda_dir/envs/work
-$conda_dir/bin/conda create -n work -y python=$PYTHON_VERSION
+rm -rf $condaDir/envs/work
+$condaDir/bin/conda create -n work -y python=$PYTHON_VERSION
 
-$conda_dir/bin/conda install -n work -y \
+$condaDir/bin/conda install -n work -y \
   numpy \
   pandas \
   scipy \
@@ -18,7 +18,7 @@ $conda_dir/bin/conda install -n work -y \
   h5py \
   dask
 
-$conda_dir/bin/conda install -n work -c conda-forge -y \
+$condaDir/bin/conda install -n work -c conda-forge -y \
   jupyter_console \
   jupyterlab \
   chartify \
@@ -40,9 +40,9 @@ $conda_dir/bin/conda install -n work -c conda-forge -y \
   pyarrow \
   boto3
   
-$conda_dir/envs/work/bin/pip install -U cookiecutter
+$condaDir/envs/work/bin/pip install -U cookiecutter
 
-$conda_dir/envs/work/bin/jupyter labextension install \
+$condaDir/envs/work/bin/jupyter labextension install \
   @jupyter-widgets/jupyterlab-manager \
   @jupyter-widgets/jupyterlab-sidecar \
   @jupyterlab/geojson-extension \

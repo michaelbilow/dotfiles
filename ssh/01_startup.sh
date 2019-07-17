@@ -1,2 +1,2 @@
-mkdir -p $homedir/.ssh
-chmod 755 $homedir/.ssh
+mkdir -p $homeDir/.ssh
+chmod 755 $homeDir/.ssh

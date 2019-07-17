@@ -1,12 +1,12 @@
 staticScriptsDir="$(dirname $(dirname $BASH_SOURCE))/static_scripts"
-cat "${staticScriptsDir}/bash_prompt_helpers.sh" >> $homedir/.bashrc
-cat "${staticScriptsDir}/bash_variables.sh" >> $homedir/.bashrc
-cat "${staticScriptsDir}/bash_aliases.sh" >> $homedir/.bash_aliases
-cat "${staticScriptsDir}/bash_profile.sh" >> $homedir/.bash_profile
+cat "${staticScriptsDir}/bash_prompt_helpers.sh" >> $homeDir/.bashrc
+cat "${staticScriptsDir}/bash_variables.sh" >> $homeDir/.bashrc
+cat "${staticScriptsDir}/bash_aliases.sh" >> $homeDir/.bash_aliases
+cat "${staticScriptsDir}/bash_profile.sh" >> $homeDir/.bash_profile
 
 if [[ $machine = "mac" ]]
 then
-    cat "${staticScriptsDir}/bash_mac.sh" >> $homedir/.bashrc
+    cat "${staticScriptsDir}/bash_mac.sh" >> $homeDir/.bashrc
 fi
 
-source $homedir/.bash_profile
+source $homeDir/.bash_profile
