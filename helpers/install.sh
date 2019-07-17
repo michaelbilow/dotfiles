@@ -1,5 +1,6 @@
 ## Install Script
-homeDir=$HOME
+
+export homeDir=$HOME # a flexible home directory variable
 
 installFolder $machine
 installFolder bash
