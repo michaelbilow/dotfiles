@@ -3,7 +3,8 @@
 installFolder() {
     folderName="$(dirname $(dirname $BASH_SOURCE))/$1"
     shift
-    ls -d $folderName | xargs -I filename installBilow filename $@
+    ls -d $folderName | xargs -I filename echo filename
+    ls -d $folderName | xargs -I filename echo installBilow filename $@
 }
 
 installBilow() {
