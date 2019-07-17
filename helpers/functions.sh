@@ -31,7 +31,6 @@ installBilow() {
 }
 
 export -f installBilow
-export -f getParentScript
 export -f askYesNo
 export -f invertTextAndLog
 export -f invertText

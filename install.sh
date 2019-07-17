@@ -3,6 +3,8 @@ source "$(dirname $BASH_SOURCE)/helpers/functions.sh"
 
 export installLogfile="/tmp/$(date +%Y%m%d%H%M%S)_install.log"
 export homedir=$HOME
+echo $homedir
+exit 0;
 
 installFolder $machine
 installFolder bash
@@ -11,7 +13,7 @@ installFolder git_tools
 installFolder ssh
 
 addUser="Do you want to add another user?"
-while [[ $(askYesNo "$addUser") = "y" ]]
+while [[ $(askYesNo "$addUser") == "y" ]]
 do
     read -p "Enter the username to add: " newUser
     export homedir="/home/$newUser"
