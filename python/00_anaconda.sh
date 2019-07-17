@@ -1,5 +1,5 @@
 conda_dir="$homedir/miniconda"
-curl https://repo.continuum.io/miniconda/Miniconda3-latest-$machine-x86_64.sh > miniconda.sh
+curl -fsSL https://repo.continuum.io/miniconda/Miniconda3-latest-$distro-x86_64.sh > miniconda.sh
 bash miniconda.sh -b -p $conda_dir
 rm miniconda.sh
 $conda_dir/bin/conda init

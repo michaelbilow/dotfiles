@@ -29,6 +29,14 @@ case "$nvidia" in
     *)          hasNvidia=n
 esac
 
+if [[ $machine == "ubuntu" ]]
+then 
+    distro="Linux"
+else
+    distro="MacOSX"
+fi
+
+export distro=$distro
 export machine=$machine
 export hasNvidia=$hasNvidia
 
