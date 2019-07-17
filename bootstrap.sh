@@ -25,7 +25,8 @@ else
         gnupg \
         apt-utils \
         dialog \
-        unzip
+        unzip \ 
+        pciutils
 fi
 
 dotfilesPath="/tmp/dotfiles-master"

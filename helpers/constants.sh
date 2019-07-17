@@ -5,7 +5,13 @@ case "${unameOut}" in
     *)           machine="UNKNOWN:${unameOut}"
 esac
 
-nvidia=$(lspci | tr '[:upper:]' '[:lower:]' | grep nvidia)
+if [[ $machine == "ubuntu" ]]
+then
+    nvidia=$(lspci | tr '[:upper:]' '[:lower:]' | grep nvidia)
+else
+    nvidia=""
+fi
+
 case "$nvidia" in 
     *nvidia*)   hasNvidia=y;;
     *)          hasNvidia=n
