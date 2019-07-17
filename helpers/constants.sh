@@ -33,6 +33,7 @@ if [[ $machine == "ubuntu" ]]
 then 
     distro="Linux"
 elif [[ $machine == "mac" ]]
+then
     distro="MacOSX"
 else
     exit 1
