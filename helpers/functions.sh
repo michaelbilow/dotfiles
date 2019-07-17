@@ -20,7 +20,7 @@ askYesNo() {
 
 # Install Utilities
 
-installBilow() {
+installFile() {
     filename=$1
     parentFolder=$(basename $(dirname $filename))
     childScript=$(basename $filename)
@@ -29,7 +29,7 @@ installBilow() {
     invertTextAndLog "Finished $childScript, returning to $parentFolder"
 }
 
-export -f installBilow
+export -f installFile
 export -f askYesNo
 export -f invertTextAndLog
 export -f invertText
@@ -38,5 +38,5 @@ export -f log
 installFolder() {
     folderName="$(dirname $(dirname $BASH_SOURCE))/$1"
     shift
-    ls -d $folderName/* | xargs -I filename bash -c "installBilow filename $@"
+    ls -d $folderName/* | xargs -I filename bash -c "installFile filename $@"
 }
