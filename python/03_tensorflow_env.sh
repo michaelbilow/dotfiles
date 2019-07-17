@@ -1,6 +1,4 @@
 # Install tensorflow python
-condaDir=$1
-hasNvidia=$3
 if [[ $hasNvidia == "y" ]]
 then
     PYTHON_VERSION=3.6
