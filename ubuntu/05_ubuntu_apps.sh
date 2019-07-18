@@ -2,6 +2,9 @@ if [[ $(command -v snap) ]]
 then
     for app in $ubuntuApps
     do
-        sudo snap install --classic $app
+        if [[ ! $(snap list | cut -d ' ' -f1 | grep $app) ]]
+        then
+            sudo snap install --classic $app
+        fi
     done
 fi
