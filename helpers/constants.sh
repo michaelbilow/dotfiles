@@ -94,6 +94,6 @@ EOF
 export ubuntuDesktopApps=$(cat <<EOF
     slack \
     spotify \
-    intellij-idea-community \
+    intellij-idea-community
 EOF
 )
