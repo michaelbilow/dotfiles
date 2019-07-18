@@ -3,6 +3,8 @@ cat "${staticScriptsDir}/bash_prompt_helpers.sh" >> $homeDir/.bashrc
 cat "${staticScriptsDir}/bash_variables.sh" >> $homeDir/.bashrc
 cat "${staticScriptsDir}/bash_aliases.sh" >> $homeDir/.bash_aliases
 cat "${staticScriptsDir}/bash_profile.sh" >> $homeDir/.bash_profile
+printf "export PATH=\"/usr/local/bin:/usr/local/sbin:$homeDir/bin:\$PATH\"\n" >> $homeDir/.bashrc
+
 
 if [[ $machine = "mac" ]]
 then
