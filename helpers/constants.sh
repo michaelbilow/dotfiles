@@ -86,7 +86,7 @@ export macOnly=$(cat <<EOF
 EOF
 )
 
-epxort ubuntuApps=$(cat <<EOF
+export ubuntuApps=$(cat <<EOF
     aws-cli
 EOF
 )
