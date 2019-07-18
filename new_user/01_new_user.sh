@@ -1,4 +1,4 @@
-sudo adduser -m -p $newUserPassword --shell /bin/bash $newUser
+sudo adduser --gecos "" --shell /bin/bash $newUser
 sudo usermod -aG docker $newUser
 
 if [[ ($hasNvidia == "y") ]]
