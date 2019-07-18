@@ -1,1 +1,1 @@
-sudo chown -R $homeDir $currentUser:$currentUser
+sudo chown -R $currentUser:$currentUser $homeDir 
