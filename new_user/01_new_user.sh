@@ -1,5 +1,5 @@
-mkdir -p $homeDir
-sudo adduser -s /bin/bash -G docker $newUser
+sudo adduser -m -p $newUserPassword --shell /bin/bash $newUser
+sudo usermod -aG docker $newUser
 
 if [[ ($hasNvidia == "y") ]]
 then
