@@ -1,5 +1,5 @@
-sudo adduser --gecos "" --shell /bin/bash $newUser
-sudo usermod -aG docker $newUser
+sudo adduser --gecos "" --shell /bin/bash $currentUser
+sudo usermod -aG docker $currentUser
 
 if [[ ($hasNvidia == "y") ]]
 then
