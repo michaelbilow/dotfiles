@@ -86,10 +86,14 @@ export macOnly=$(cat <<EOF
 EOF
 )
 
-export ubuntuApps=$(cat <<EOF
+epxort ubuntuApps=$(cat <<EOF
+    aws-cli
+EOF
+)
+
+export ubuntuDesktopApps=$(cat <<EOF
     slack \
     spotify \
     intellij-idea-community \
-    aws-cli
 EOF
 )
