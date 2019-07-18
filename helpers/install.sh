@@ -1,7 +1,7 @@
 ## Install Script
 
 export homeDir=$HOME # a flexible home directory variable
-export currentUser="$(logname)""
+export currentUser="$(logname)"
 export condaDir="${homeDir}/miniconda"
 
 installFolder $machine
