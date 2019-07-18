@@ -1,6 +1,7 @@
 ## Install Script
 
 export homeDir=$HOME # a flexible home directory variable
+export currentUser=$USER
 export condaDir="${homeDir}/miniconda"
 
 installFolder $machine
@@ -33,14 +34,16 @@ do
     installFolder passwordless_ssh
 done
 
+installFolder finish
+
 addUser="Do you want to add another user?"
 while [[ $(askYesNo "$addUser") == "y" ]]
 do
-    read -p "Enter the username to add: " newUser
-    export homeDir="/home/$newUser"
+    read -p "Enter the username to add: " currentUser
+    export homeDir="/home/$currentUser"
     export condaDir="${homeDir}/miniconda"
     installFolder new_user
     installFolder bash 
     installFolder python
-    sudo chown -R $homeDir $newUser:$newUser
+    installFolder finish
 done

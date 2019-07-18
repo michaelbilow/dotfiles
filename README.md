@@ -18,7 +18,7 @@ Personally I find the bitly link easier to remember, so:
 ```bash
 $ apt-get update && apt-get install -y curl sudo
 $ curl -L bit.ly/bilow1804 > bootstrap.sh
-$ sudo -H bash bootstrap.sh
+$ sudo bash bootstrap.sh
 ```
 
 ## What does it install?

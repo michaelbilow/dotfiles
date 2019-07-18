@@ -58,6 +58,6 @@ cat $dotfilesPath/helpers/constants.sh \
     $dotfilesPath/helpers/functions.sh \
     $dotfilesPath/helpers/install.sh > \
     $dotfilesPath/install.sh
-sudo bash -H $dotfilesPath/install.sh
+sudo bash $dotfilesPath/install.sh
 rm -rf $dotfilesPath
 sudo reboot
