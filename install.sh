@@ -2,7 +2,6 @@
 
 export homeDir=$HOME # a flexible home directory variable
 export currentUser="$(logname)"
-export condaDir="${homeDir}/miniconda"
 
 installFolder $machine
 installFolder bash
@@ -41,9 +40,7 @@ while [[ $(askYesNo "$addUser") == "y" ]]
 do
     read -p "Enter the username to add: " currentUser
     export homeDir="/home/$currentUser"
-    export condaDir="${homeDir}/miniconda"
     installFolder new_user
     installFolder bash 
-    installFolder python
     installFolder finish
 done

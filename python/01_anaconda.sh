@@ -3,5 +3,5 @@ curl -fsSL $condaUrl > miniconda.sh
 rm -rf $condaDir
 bash miniconda.sh -b -p $condaDir
 rm miniconda.sh
-$condaDir/bin/conda init
 $condaDir/bin/conda update -n base -c defaults -y conda
+sudo ln -s $condaDir/etc/profile.d/conda.sh /etc/profile.d/conda.sh

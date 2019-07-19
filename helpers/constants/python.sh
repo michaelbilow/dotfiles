@@ -1,3 +1,5 @@
+export condaDir="/opt/conda"
+
 export basicCondaDeps=$(cat <<EOF
     numpy \
     pandas \
