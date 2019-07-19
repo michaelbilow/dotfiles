@@ -12,7 +12,7 @@ export basicCondaDeps=$(cat <<EOF
     jupyterlab \
     jupyter \
     matplotlib \
-    plotly 
+    plotly
 EOF
 )
 
