@@ -6,16 +6,6 @@ then
     $condaDir/bin/conda create -n tf -y python=$PYTHON_VERSION
 
     $condaDir/bin/conda install -n tf -y \
-        tensorflow-gpu \
-        numpy \
-        pandas \
-        scipy \
-        scikit-learn \
-        openpyxl \
-        xlrd \
-        jupyter \
-        plotly \
-        matplotlib \
-        beautifulsoup4 \
-        h5py 
+        $basicPythonDeps \
+        $tensorflowPythonDeps
 fi
