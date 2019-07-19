@@ -1,15 +1,17 @@
 # Install work python
 PYTHON_VERSION=3.6
-rm -rf $condaDir/envs/work
-$condaDir/bin/conda create -n work -y python=$PYTHON_VERSION
+envName=work
+rm -rf $condaDir/envs/$envName
+$condaDir/bin/conda create -n $envName -y python=$PYTHON_VERSION
 
-$condaDir/bin/conda install -n work -y \
-    $basicPythonDeps
+$condaDir/bin/conda install -n $envName -y \
+    $basicCondaDeps
 
-$condaDir/bin/conda install -n work -c conda-forge -y \
+$condaDir/bin/conda install -n $envName -c conda-forge -y \
+    $basicCondaForgeDeps \
     $workCondaForgeDeps
 
-$condaDir/envs/work/bin/jupyter labextension install \
+$condaDir/envs/$envName/bin/jupyter labextension install \
     $workJupyterLabextensions
 
 

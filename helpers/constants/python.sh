@@ -58,7 +58,7 @@ export workCondaForgeDeps=$(cat <<EOF
 EOF
 )
 
-export tensorflowPythonDeps=$(cat <<EOF
+export tensorflowCondaDeps=$(cat <<EOF
     tensorflow-gpu
 EOF
 )

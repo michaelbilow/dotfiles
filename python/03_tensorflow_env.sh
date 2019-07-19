@@ -1,11 +1,14 @@
-# Install tensorflow python
 if [[ $hasNvidia == "y" ]]
 then
     PYTHON_VERSION=3.6
-    rm -rf $condaDir/envs/tf
-    $condaDir/bin/conda create -n tf -y python=$PYTHON_VERSION
+    envName=tf
+    rm -rf $condaDir/envs/$envName
+    $condaDir/bin/conda create -n $envName -y python=$PYTHON_VERSION
 
-    $condaDir/bin/conda install -n tf -y \
-        $basicPythonDeps \
-        $tensorflowPythonDeps
+    $condaDir/bin/conda install -n $envName -y \
+        $basicCondaDeps \
+        $tensorflowCondaDeps
+    
+    $condaDir/bin/conda install -n $envName -c conda-forge -y \
+        $basicCondaForgeDeps
 fi
