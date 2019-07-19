@@ -54,10 +54,9 @@ dotfilesUrl=https://github.com/michaelbilow/dotfiles/archive/master.zip
 rm -rf $dotfilesPath
 curl -fsSL $dotfilesUrl > $dotfilesZipPath
 unzip $dotfilesZipPath -d /tmp
-cat $dotfilesPath/helpers/constants.sh \
-    $dotfilesPath/helpers/functions.sh \
-    $dotfilesPath/helpers/install.sh > \
-    $dotfilesPath/install.sh
-sudo bash $dotfilesPath/install.sh
+find $dotfilesPath/helpers -type f | xargs cat > $dotfilesPath/complete_install_script.sh
+cat $dotfilesPath/install.sh >> $dotfilesPath/complete_install_script.sh
+sudo bash $dotfilesPath/complete_install_script.sh
 rm -rf $dotfilesPath
+rm $BASH_SOURCE
 sudo reboot
