@@ -7,7 +7,7 @@ $condaDir/bin/conda install -n work -y \
     $basicPythonDeps
 
 $condaDir/bin/conda install -n work -c conda-forge -y \
-    $workCondaForgeDpes
+    $workCondaForgeDeps
 
 $condaDir/envs/work/bin/jupyter labextension install \
     $workJupyterLabextensions
