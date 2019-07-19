@@ -1,5 +1,6 @@
 
 echo "sorry, not working with 2FA right now"
+sleep 5
 exit 0
 # TODO: Fix!
 read -sp "Github password: " ghPass

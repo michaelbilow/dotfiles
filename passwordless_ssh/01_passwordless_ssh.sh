@@ -1,1 +1,1 @@
-wormhole ssh invite
+sudo wormhole ssh invite
