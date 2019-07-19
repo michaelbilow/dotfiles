@@ -12,15 +12,15 @@ export basicCondaDeps=$(cat <<EOF
     jupyterlab \
     jupyter \
     matplotlib \
-    plotly \
-    chartify
+    plotly 
 EOF
 )
 
 export basicCondaForgeDeps=$(cat <<EOF
     nodejs \
     pyarrow \
-    boto3
+    boto3 \
+    chartify
 EOF
 )
 
