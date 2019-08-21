@@ -56,7 +56,8 @@ export workCondaForgeDeps=$(cat <<EOF
     jaydebeapi \
     altair \
     vega_datasets \
-    cookiecutter
+    cookiecutter \
+    statsmodels
 EOF
 )
 
